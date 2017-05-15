@@ -7,6 +7,7 @@ n = 50;
 t = linspace(0,n,n+1)';
 ts = t(2)-t(1);
 
+% github test 15:55
 %%
 % The hexapod 626 can move in X, Y, and Z direction and rotate along X, Y, 
 % and Z axis.

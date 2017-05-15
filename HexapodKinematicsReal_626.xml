@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SFunctionConfiguration Name='HexapodKinematics'>
+    <Property Name='ActuatorMaximumPosition' Type='Float' Unit='m'>1.898</Property>
+    <Property Name='ActuatorMinimumPosition' Type='Float' Unit='m'>1.257</Property>
+    <Property Name='ActuatorNeutralPosition' Type='Float' Unit='m'>1.5591</Property>
+    <Property Name='ActuatorMaximumVelocity' Type='Float' Unit='m'>0.5</Property>
+    <Property Name='ActuatorMaximumAcceleration' Type='Float' Unit='m'>13</Property>
+    <Property Name='BackwardKinConvLimit' Type='Float' Unit='m'>1e-06</Property>
+    <Property Name='FixedJointsRadius' Type='Float' Unit='m'>1.305</Property>
+    <Property Name='FixedJointsSpacing' Type='Float' Unit='m'>0.2512</Property>
+    <Property Name='MovingJointsRadius' Type='Float' Unit='m'>1.055</Property>
+    <Property Name='MovingJointsSpacing' Type='Float' Unit='m'>0.2512</Property>
+    <Property Name='OrientationAngle' Type='Float' Unit='deg'>0</Property>
+    <Property Name='PositionHF_RRP_X' Type='Float' Unit='m'>0</Property>
+    <Property Name='PositionHF_RRP_Y' Type='Float' Unit='m'>0</Property>
+    <Property Name='PositionHF_RRP_Z' Type='Float' Unit='m'>0</Property>
+    <Property Name='TzPositiveDown' Type='Bool' Unit='-'>f</Property>
+    <Property Name='Force_IsElectric' Type='Bool' Unit='-'>t</Property>
+    <Property Name='Force_Mass' Type='Float' Unit='kg'>9739</Property>
+    <Property Name='Force_CoM_X' Type='Float' Unit='m'>0.114</Property>
+    <Property Name='Force_CoM_Y' Type='Float' Unit='m'>-0.076</Property>
+    <Property Name='Force_CoM_Z' Type='Float' Unit='m'>-0.629</Property>
+    <Property Name='Force_Ixx' Type='Float' Unit='kgm2'>8668</Property>
+    <Property Name='Force_Iyy' Type='Float' Unit='kgm2'>10160</Property>
+    <Property Name='Force_Izz' Type='Float' Unit='kgm2'>13336</Property>
+    <Property Name='Force_ActuatorInertia' Type='Float' Unit='kgm2'>0.1104</Property>
+    <Property Name='Force_ActMassMoving' Type='Float' Unit='m'>183</Property>
+    <Property Name='Force_ActMOIFixed' Type='Float' Unit='kgm2'>1773</Property>
+    <Property Name='Force_SpindleEfficiency' Type='Float' Unit='-'>0.95</Property>
+    <Property Name='Force_SpindleRatio' Type='Float' Unit='m'>0.03</Property>
+    <Property Name='Force_Friction' Type='Float' Unit='Nm'>5</Property>
+    <Property Name='Force_Kt' Type='Float' Unit='NmA'>2.95</Property>
+    <Property Name='Force_PneumaticsForce1' Type='Float' Unit='N'>17100</Property>
+    <Property Name='Force_PneumaticsForce2' Type='Float' Unit='N'>17511</Property>
+    <Property Name='Force_PneumaticsForce3' Type='Float' Unit='N'>22437</Property>
+    <Property Name='Force_PneumaticsForce4' Type='Float' Unit='N'>22952</Property>
+    <Property Name='Force_PneumaticsForce5' Type='Float' Unit='N'>20765</Property>
+    <Property Name='Force_PneumaticsForce6' Type='Float' Unit='N'>19838</Property>
+</SFunctionConfiguration>

@@ -2,14 +2,14 @@
 <SFunctionConfiguration Name='HexapodKinematics'>
     <Property Name='ActuatorMaximumPosition' Type='Float' Unit='m'>1.898</Property>
     <Property Name='ActuatorMinimumPosition' Type='Float' Unit='m'>1.257</Property>
-    <Property Name='ActuatorNeutralPosition' Type='Float' Unit='m'>1.5591</Property>
+    <Property Name='ActuatorNeutralPosition' Type='Float' Unit='m'>1.5541</Property>
     <Property Name='ActuatorMaximumVelocity' Type='Float' Unit='m'>0.5</Property>
     <Property Name='ActuatorMaximumAcceleration' Type='Float' Unit='m'>13</Property>
     <Property Name='BackwardKinConvLimit' Type='Float' Unit='m'>1e-06</Property>
-    <Property Name='FixedJointsRadius' Type='Float' Unit='m'>1.305</Property>
-    <Property Name='FixedJointsSpacing' Type='Float' Unit='m'>0.2512</Property>
-    <Property Name='MovingJointsRadius' Type='Float' Unit='m'>1.055</Property>
-    <Property Name='MovingJointsSpacing' Type='Float' Unit='m'>0.2512</Property>
+    <Property Name='FixedJointsRadius' Type='Float' Unit='m'>1.3</Property>
+    <Property Name='FixedJointsSpacing' Type='Float' Unit='m'>0.2462</Property>
+    <Property Name='MovingJointsRadius' Type='Float' Unit='m'>1.05</Property>
+    <Property Name='MovingJointsSpacing' Type='Float' Unit='m'>0.2462</Property>
     <Property Name='OrientationAngle' Type='Float' Unit='deg'>0</Property>
     <Property Name='PositionHF_RRP_X' Type='Float' Unit='m'>0</Property>
     <Property Name='PositionHF_RRP_Y' Type='Float' Unit='m'>0</Property>

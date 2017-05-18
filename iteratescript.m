@@ -40,7 +40,7 @@ end
 ParameterName = {'FixedJointsRadius','FixedJointsSpacing', 'MovingJointsRadius', 'MovingJointsSpacing'}; 
 delta = [-0.001 0.001]*5; % deviance of 5mm 
  
-for Property = 1:4 
+for Property = 1:2
      
     % read from xml file 
     ParameterValue = readproperty('HexapodKinematicsModel_626.xml','Property',ParameterName{Property},false,false); 

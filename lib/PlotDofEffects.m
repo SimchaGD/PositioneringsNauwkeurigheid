@@ -20,7 +20,7 @@ function PlotDofEffects(PlotIndex, PlatformPosInputMatrix,RealPositions,dofNames
     
     % prettify figures
     PosRot = {'Position ', 'Rotation '};
-    Units = {' in metres',' in arcminute'};
+    Units = {' in metres',' in radians'};
     if PlotIndex <= 3
         effect = PosRot{1};
         yUnit = Units{1};

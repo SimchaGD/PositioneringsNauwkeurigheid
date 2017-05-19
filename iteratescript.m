@@ -75,7 +75,7 @@ for Property = 1:1
             % make a table with diffrences in plots
             DiffrencesForTable{deltaIndex,1} = [RealPositions(1,:);RealPositions(end,:)];
             if deltaIndex == 2
-                CreateTables(DiffrencesForTable, name)
+                TableForParameterdof = CreateTables(DiffrencesForTable, name)
             end
             
             % make a plot for each displacement direction and rotation axes 

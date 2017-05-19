@@ -9,7 +9,6 @@ T = table([DiffrencesForTable{1}(:,1);DiffrencesForTable{2}(:,1)],...
       
 T.Properties.VariableNames = {'Tx' 'Ty' 'Tz' 'Rx' 'Ry' 'Rz'};
 
-setHeading(T, name)
 TableForParameterdof = T;
 
           

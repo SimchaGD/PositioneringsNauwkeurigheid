@@ -40,12 +40,12 @@ end
 ParameterName = {'FixedJointsRadius','FixedJointsSpacing', 'MovingJointsRadius', 'MovingJointsSpacing'}; 
 delta = [-0.001 0.001]*5; % deviance of 5mm 
  
-for Property = 1:4 
+for Property = 1:4
      
     % read from xml file 
     ParameterValue = readproperty('HexapodKinematicsModel_626.xml','Property',ParameterName{Property},false,false); 
      
-    for dofIndex = 1:6 
+    for dofIndex = 1:6
         % prettify figure 
         name = [ParameterName{Property} ' ' dof{dofIndex}]; 
         fig = figure('Name', name,'units','normalized','outerposition',[0 0 1 1]);      
@@ -75,27 +75,29 @@ for Property = 1:4
             for PlotIndex=1:6 
                 subplot(2,3,PlotIndex) 
                 PlotDofEffects(PlotIndex, PlatformPosInputMatrix,RealPositions,dof,dofIndex, deviation) 
+                
+                ax = findobj(gcf,'type','axes'); 
+                % set y axes range 
+                deltaReal = RealPositions-PlatformPosInputMatrix;                        
+                
+                yminTemp = min(deltaReal(:))*1.1; 
+                ymaxTemp = max(deltaReal(:))*1.1; 
+                
+                if yminTemp <= ymin 
+                    ymin = yminTemp; 
+                end 
+                if ymaxTemp >= ymax 
+                    ymax = ymaxTemp; 
+                end 
+             
+                ylim(ax,[ymin ymax])
             end 
              
             % figure title 
             dim = [0.37 0.96 0.3 0.05]; 
             annotation('textbox',dim,'String',name,'FitBoxToText','on', ... 
                        'EdgeColor', 'none', 'FontSize', 18, ... 
-                       'FontName', 'Palatino Linotype','HorizontalAlignment', 'center') 
-            ax = findobj(gcf,'type','axes'); 
-             
-            % set y axes range 
-            deltaReal = RealPositions-PlatformPosInputMatrix;                        
-            yminTemp = min(deltaReal(:))*1.1; 
-            ymaxTemp = max(deltaReal(:))*1.1; 
-            if yminTemp <= ymin 
-                ymin = yminTemp; 
-            end 
-            if ymaxTemp >= ymax 
-                ymax = ymaxTemp; 
-            end 
-             
-            ylim(ax,[ymin ymax]) 
+                       'FontName', 'Palatino Linotype','HorizontalAlignment', 'center')
         end 
          
         % save figures as PNG and EMF 

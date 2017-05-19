@@ -39,6 +39,7 @@ end
  
 ParameterName = {'FixedJointsRadius','FixedJointsSpacing', 'MovingJointsRadius', 'MovingJointsSpacing'}; 
 delta = [-0.001 0.001]*5; % deviance of 5mm 
+DiffrencesForTable = cell(2,1);
  
 for Property = 1:4
      
@@ -71,6 +72,12 @@ for Property = 1:4
             % simulating the hexapod creates a lot of warnings, these are  
             % irrelevant 
              
+            % make a table with diffrences in plots
+            DiffrencesForTable{deltaIndex,1} = [RealPositions(1,:);RealPositions(end,:)];
+            if deltaIndex == 2
+                CreateTables(DiffrencesForTable, name)
+            end
+            
             % make a plot for each displacement direction and rotation axes 
             for PlotIndex=1:6 
                 subplot(2,3,PlotIndex) 

@@ -3,9 +3,9 @@ function PlotDofEffects(PlotIndex, PlatformPosInputMatrix,RealPositions,dofNames
     
     
     if deviation >= 0
-        linestyle = 'b*-';
+        linestyle = 'r*-';
     else 
-        linestyle = 'ro-';
+        linestyle = 'bo-';
     end
     
     % set y input

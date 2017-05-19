@@ -1,5 +1,5 @@
 clc, clearvars, close all 
-DoPrint = 0; 
+DoPrint = 1; 
 %% Simulation parameters 
 % The simulation runs the model for 50 timeunits 
 % ts is the difference between two timeunits 

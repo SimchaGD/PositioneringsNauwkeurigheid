@@ -41,7 +41,7 @@ ParameterName = {'FixedJointsRadius','FixedJointsSpacing', 'MovingJointsRadius',
 delta = [-0.001 0.001]*5; % deviance of 5mm 
 DiffrencesForTable = cell(2,1);
  
-for Property = 1:4
+for Property = 1:1
      
     % read from xml file 
     ParameterValue = readproperty('HexapodKinematicsModel_626.xml','Property',ParameterName{Property},false,false); 
@@ -113,7 +113,8 @@ for Property = 1:4
             print(fig,['PNGPlots\' PrintName],'-dpng') 
             print(fig,['EMFPlots\' PrintName],'-dmeta') 
         end 
-         
+        % write original value to xml 
+        writeproperty('HexapodKinematicsReal_626.xml','Property',ParameterName{Property},ParamValue,false) 
     end 
     hold off 
 % github test 15:55

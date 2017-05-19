@@ -41,11 +41,12 @@ ParameterName = {'FixedJointsRadius','FixedJointsSpacing', 'MovingJointsRadius',
 delta = [-0.001 0.001]*5; % deviance of 5mm 
 DiffrencesForTable = cell(2,1);
  
-for Property = 1:1
+for Property = 1:4
      
     % read from xml file 
     ParameterValue = readproperty('HexapodKinematicsModel_626.xml','Property',ParameterName{Property},false,false); 
-     
+    % write original value to xml 
+    writeproperty('HexapodKinematicsReal_626.xml','Property',ParameterName{Property},ParameterValue,false)  
     for dofIndex = 1:6
         % prettify figure 
         name = [ParameterName{Property} ' ' dof{dofIndex}]; 
@@ -61,14 +62,15 @@ for Property = 1:1
              
             % write to xml 
             writeproperty('HexapodKinematicsReal_626.xml','Property',ParameterName{Property},NewValue,false) 
- 
+            
              
             PlatformPosInputMatrix = zeros(length(displacement),6); 
             PlatformPosInputMatrix(:,dofIndex) = PlatformPosInputStruct.(dof{dofIndex}); 
              
             % simulate hexapod 
             sim('HexapodModel'); 
-             
+            % write original value to xml 
+            writeproperty('HexapodKinematicsReal_626.xml','Property',ParameterName{Property},ParameterValue,false)   
             % simulating the hexapod creates a lot of warnings, these are  
             % irrelevant 
             PlatformPosInputMatrix(:,4:6) = rad2deg(PlatformPosInputMatrix(:,4:6))./60;
@@ -115,8 +117,7 @@ for Property = 1:1
             print(fig,['PNGPlots\' PrintName],'-dpng') 
             print(fig,['EMFPlots\' PrintName],'-dmeta') 
         end 
-        % write original value to xml 
-        writeproperty('HexapodKinematicsReal_626.xml','Property',ParameterName{Property},ParameterValue,false) 
+        
     end 
     hold off 
 end

@@ -21,7 +21,7 @@ function PlotDofEffects(PlotIndex, PlatformPosInputMatrix,RealPositions,dofNames
     % prettify figures
     PosRot = {'Position ', 'Rotation '};
     Units = {' in metres',' in radiants'};
-    if PlotIndex < 3
+    if PlotIndex <= 3
         effect = PosRot{1};
         yUnit = Units{1};
     else
@@ -31,7 +31,7 @@ function PlotDofEffects(PlotIndex, PlatformPosInputMatrix,RealPositions,dofNames
     title([effect dofNames{PlotIndex}])
     ylabel(['Real Platform ' effect dofNames{PlotIndex} yUnit])
     
-    if dofIndex < 3
+    if dofIndex <= 3
         movement = PosRot{1};
         xUnit = Units{1};
     else

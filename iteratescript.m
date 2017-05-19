@@ -109,13 +109,12 @@ for Property = 1:1
          
         % save figures as PNG and EMF 
         if DoPrint 
-            PrintName = [num2str(fig.Number) '_' name] 
+            PrintName = [num2str(fig.Number) '_' name];
             print(fig,['PNGPlots\' PrintName],'-dpng') 
             print(fig,['EMFPlots\' PrintName],'-dmeta') 
         end 
         % write original value to xml 
-        writeproperty('HexapodKinematicsReal_626.xml','Property',ParameterName{Property},ParamValue,false) 
+        writeproperty('HexapodKinematicsReal_626.xml','Property',ParameterName{Property},ParameterValue,false) 
     end 
     hold off 
-% github test 15:55
 end

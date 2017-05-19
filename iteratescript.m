@@ -71,7 +71,9 @@ for Property = 1:1
              
             % simulating the hexapod creates a lot of warnings, these are  
             % irrelevant 
-             
+            PlatformPosInputMatrix(:,4:6) = rad2deg(PlatformPosInputMatrix(:,4:6))./60;
+           
+            RealPositions(:,4:6) = rad2deg(RealPositions(:,4:6))./60;
             % make a table with diffrences in plots
             DiffrencesForTable{deltaIndex,1} = [RealPositions(1,:);RealPositions(end,:)];
             if deltaIndex == 2

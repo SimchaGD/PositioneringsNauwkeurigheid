@@ -1,29 +1,44 @@
 function PlotDofEffects(PlotIndex, PlatformPosInputMatrix,RealPositions,dofNames,dofIndex, deviation)
-
-        if deviation >= 0
-            if PlotIndex==dofIndex
-                plot(PlatformPosInputMatrix(:,dofIndex),RealPositions(:,PlotIndex)-PlatformPosInputMatrix(:,dofIndex),'.-')
-            else
-                plot(PlatformPosInputMatrix(:,dofIndex),RealPositions(:,PlotIndex),'.-')
-            end
-        else
-            if PlotIndex==dofIndex
-                plot(PlatformPosInputMatrix(:,dofIndex),RealPositions(:,PlotIndex)-PlatformPosInputMatrix(:,dofIndex),'*-')
-            else
-                plot(PlatformPosInputMatrix(:,dofIndex),RealPositions(:,PlotIndex),'*-')
-            end
-        end
-        
-        hold all
-        ylim([min(min(RealPositions-PlatformPosInputMatrix)) max(max(RealPositions-PlatformPosInputMatrix))]*1.1)
-        
-        if PlotIndex == 1 || PlotIndex == 2 || PlotIndex == 3
-            title(['Pos' dofNames{PlotIndex}])
-        else
-            title(['Rot' dofNames{PlotIndex}])
-        end
-        
-        xlabel(['Model Platform Position ' dofNames{dofIndex}])
-        ylabel(['Real Platform Position' dofNames{PlotIndex}])
-        grid on
+    deltaReal = RealPositions(:,PlotIndex)-PlatformPosInputMatrix(:,dofIndex);
+    
+    
+    if deviation >= 0
+        linestyle = 'b*-';
+    else 
+        linestyle = 'ro-';
+    end
+    
+    % set y input
+    if PlotIndex==dofIndex
+        MotionMatrix = deltaReal;
+    else
+        MotionMatrix = RealPositions(:,PlotIndex);    
+    end
+    
+    plot(PlatformPosInputMatrix(:,dofIndex),MotionMatrix,linestyle)
+    hold all
+    
+    % prettify figures
+    PosRot = {'Position ', 'Rotation '};
+    Units = {' in metres',' in radiants'};
+    if PlotIndex < 3
+        effect = PosRot{1};
+        yUnit = Units{1};
+    else
+        effect = PosRot{2};
+        yUnit = Units{2};
+    end
+    title([effect dofNames{PlotIndex}])
+    ylabel(['Real Platform ' effect dofNames{PlotIndex} yUnit])
+    
+    if dofIndex < 3
+        movement = PosRot{1};
+        xUnit = Units{1};
+    else
+        movement = PosRot{2};
+        xUnit = Units{2};
+    end
+    xlabel(['Model Platform ' movement dofNames{dofIndex} xUnit])
+    
+    grid on
 end
